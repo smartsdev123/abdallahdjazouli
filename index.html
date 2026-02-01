@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <!-- fond décoratif -->
   <div class="bg" aria-hidden="true"></div>
 
@@ -18,7 +19,7 @@
       <div class="badge">Photos</div>
       <h1 class="title">Photos de <span class="accent">Abdallah Djazouli</span></h1>
       <p class="subtitle">
-       Site web à l'effigie de Abdallah Djazouli suite a son autorisation.
+        Site web à l'effigie de Abdallah Djazouli suite a son autorisation.
       </p>
 
       <div class="stats">
@@ -39,7 +40,7 @@
   </header>
 
   <main class="container">
-    <!-- mini intro -->
+
     <section class="card">
       <div class="card__glow" aria-hidden="true"></div>
       <h2 class="card__title">moments</h2>
@@ -50,7 +51,7 @@
 
     <!-- galerie -->
     <section class="gallery" aria-label="Galerie photo">
-      <!-- tu remplaces les src par tes photos : photos/1.jpg, photos/2.jpg, etc. -->
+
       <figure class="shot shot--big">
         <img src="photos3.png" alt="Souvenir 1" loading="lazy" />
         <figcaption>
@@ -104,8 +105,8 @@
           src="VID_20251218_095706.mp4"
           controls
           playsinline
-          preload="metadata"
-        ></video>
+          preload="metadata">
+        </video>
         <figcaption>
           <span class="cap__title">Souvenir vidéo</span>
           <span class="cap__meta">Abdallah en train de jouer a Minecraft durant le court de SI</span>
@@ -119,48 +120,46 @@
           <span class="cap__meta">Abdallah fait le con au photomaton</span>
         </figcaption>
       </figure>
+
+      <figure class="shot">
+        <img src="Snapchat-573563581.jpg" alt="Souvenir 9" loading="lazy" />
+        <figcaption>
+          <span class="cap__title">Photo 9</span>
+          <span class="cap__meta">Photo d'Abdallah en train de faire une grimace traumatisante dans sa vitre de PC</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="13444.jpg" alt="Souvenir 10" loading="lazy" />
+        <figcaption>
+          <span class="cap__title">Photo 10</span>
+          <span class="cap__meta">Photo d'Abdallah au musee de l'illusion.</span>
+        </figcaption>
+      </figure>
+
     </section>
 
-    <figure class="shot">
-      <img src="Snapchat-573563581.jpg" alt="Souvenir 4" loading="lazy" />
-      <figcaption>
-        <span class="cap__title">Photo 9</span>
-        <span class="cap__meta">Photo d'Abdallah en train de faire une grimace traumatisante dans sa vitre de PC</span>
-      </figcaption>
-    </figure>
-
-    <figure class="shot">
-      <img src="13444.jpg" alt="Souvenir 4" loading="lazy" />
-      <figcaption>
-        <span class="cap__title">Photo 10</span>
-        <span class="cap__meta">Photo d'Abdallah au musee de l'illusion.</span>
-      </figcaption>
-    </figure>
-
-    <!-- footer -->
     <footer class="footer">
       <p>fait avec ❤️ — <span class="muted">abdallahdjazouli.com</span></p>
     </footer>
+
   </main>
 
-  <!-- Lightbox (déplacée ICI, dans le body) -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox__backdrop"></div>
 
     <div class="lightbox__panel">
       <button class="lightbox__nav lightbox__nav--prev" aria-label="Précédent">‹</button>
-
       <img class="lightbox__img" src="" alt="">
-
       <button class="lightbox__nav lightbox__nav--next" aria-label="Suivant">›</button>
-
       <button class="lightbox__close" aria-label="Fermer">✕</button>
-
       <div class="lightbox__caption"></div>
     </div>
   </div>
 
-  <!-- Script (déplacé ICI, fin de body) -->
+  <!-- script -->
   <script src="script.js"></script>
+
 </body>
 </html>
