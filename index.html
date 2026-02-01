@@ -13,19 +13,15 @@
   <!-- fond décoratif -->
   <div class="bg" aria-hidden="true"></div>
 
-  <!-- Lightbox -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox__backdrop"></div>
 
     <div class="lightbox__panel">
       <button class="lightbox__nav lightbox__nav--prev" aria-label="Précédent">‹</button>
-
       <img class="lightbox__img" src="" alt="">
-
       <button class="lightbox__nav lightbox__nav--next" aria-label="Suivant">›</button>
-
       <button class="lightbox__close" aria-label="Fermer">✕</button>
-
       <div class="lightbox__caption"></div>
     </div>
   </div>
@@ -56,6 +52,7 @@
   </header>
 
   <main class="container">
+    <!-- intro -->
     <section class="card">
       <div class="card__glow" aria-hidden="true"></div>
       <h2 class="card__title">moments</h2>
@@ -64,10 +61,11 @@
       </p>
     </section>
 
+    <!-- galerie -->
     <section class="gallery" aria-label="Galerie photo">
 
       <figure class="shot shot--big">
-        <img src="photos3.png" alt="Photo du roi avec une couronne Burger King" loading="lazy" />
+        <img src="photos3.png" alt="Photo 1" loading="lazy">
         <figcaption>
           <span class="cap__title">Photo 1</span>
           <span class="cap__meta">Photo du roi avec une couronne Burger King</span>
@@ -75,7 +73,7 @@
       </figure>
 
       <figure class="shot">
-        <img src="Capture d'écran 2026-02-01 011207.png" alt="il rigole bien hein" loading="lazy" />
+        <img src="Capture d'écran 2026-02-01 011207.png" alt="Photo 2" loading="lazy">
         <figcaption>
           <span class="cap__title">Photo 2</span>
           <span class="cap__meta">il rigole bien hein</span>
@@ -83,7 +81,7 @@
       </figure>
 
       <figure class="shot">
-        <img src="AP1GczO7c5G5WrG_lee1AZ6bVj57btOtFHhi012MWzItHem58J5UDw1nCyHVw532-h945-s-no-gm.png" alt="Photo de Abdallah dans le metro" loading="lazy" />
+        <img src="AP1GczO7c5G5WrG_lee1AZ6bVj57btOtFHhi012MWzItHem58J5UDw1nCyHVw532-h945-s-no-gm.png" alt="Photo 3" loading="lazy">
         <figcaption>
           <span class="cap__title">Photo 3</span>
           <span class="cap__meta">Photo de Abdallah dans le metro</span>
@@ -91,10 +89,59 @@
       </figure>
 
       <figure class="shot">
-        <img src="23553455image.png" alt="Skibidi Toilet" loading="lazy" />
+        <img src="23553455image.png" alt="Photo 4" loading="lazy">
         <figcaption>
           <span class="cap__title">Photo 4</span>
-          <span class="cap__meta">Photo d'Abdallah tentant de reproduire "Skibidi Toilet"</span>
+          <span class="cap__meta">Photo d'Abdallah tentant de reproduire " Skibidi Toilet "</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot shot--wide">
+        <img src="AP1GczMLEh_SpXszSWTg0zbAOdHM_HzIOqoqsSEv1qkybOAWn0HKq3UwPOXTw710-h945-s-no-gm.png" alt="Photo 5" loading="lazy">
+        <figcaption>
+          <span class="cap__title">Photo 5</span>
+          <span class="cap__meta">La veille du brevet</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="AP1GczPtUbH3NWGaeaeMLpbXpuQGBX333vntQ6MF0x_oPeHpFxnFJ1a1sNqDrs4w710-h945-s-no-gm.png" alt="Photo 6" loading="lazy">
+        <figcaption>
+          <span class="cap__title">Photo 6</span>
+          <span class="cap__meta">Apres avoir mange au KFC</span>
+        </figcaption>
+      </figure>
+
+      <!-- vidéo (pas dans la lightbox) -->
+      <figure class="shot shot--big">
+        <video src="VID_20251218_095706.mp4" controls preload="metadata"></video>
+        <figcaption>
+          <span class="cap__title">Souvenir vidéo</span>
+          <span class="cap__meta">Abdallah en train de jouer a Minecraft durant le court de SI</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="Capture d'écran 2026-02-01 011229.png" alt="Photo 8" loading="lazy">
+        <figcaption>
+          <span class="cap__title">Photo 8</span>
+          <span class="cap__meta">Abdallah fait le con au photomaton</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="Snapchat-573563581.jpg" alt="Photo 9" loading="lazy">
+        <figcaption>
+          <span class="cap__title">Photo 9</span>
+          <span class="cap__meta">Photo d'Abdallah en train de faire une grimace traumatisante dans sa vitre de PC</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="13444.jpg" alt="Photo 10" loading="lazy">
+        <figcaption>
+          <span class="cap__title">Photo 10</span>
+          <span class="cap__meta">Photo d'Abdallah au musee de l'illusion.</span>
         </figcaption>
       </figure>
 
@@ -105,7 +152,6 @@
     </footer>
   </main>
 
-  <!-- JS TOUJOURS ICI -->
   <script src="script.js"></script>
 </body>
 </html>
