@@ -24,59 +24,21 @@
   </div>
 </div>
 
-<script>
-(() => {
-  const shots = Array.from(document.querySelectorAll('.gallery .shot img'));
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbCap = document.getElementById('lightboxCaption');
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop" data-close></div>
 
-  let index = -1;
+  <div class="lightbox__panel" role="dialog" aria-modal="true">
+    <button class="lightbox__close" type="button" data-close>✕</button>
 
-  function openAt(i) {
-    index = i;
-    const img = shots[index];
-    lbImg.src = img.getAttribute('src');
-    lbImg.alt = img.getAttribute('alt') || 'Photo';
-    const fig = img.closest('figure');
-    const cap = fig ? fig.querySelector('figcaption') : null;
-    lbCap.textContent = cap ? cap.innerText.replace(/\s+/g,' ').trim() : '';
-    lb.classList.add('is-open');
-    lb.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-  }
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-prev>‹</button>
+    <img class="lightbox__img" id="lightboxImg" alt="">
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-next>›</button>
 
-  function close() {
-    lb.classList.remove('is-open');
-    lb.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('no-scroll');
-    lbImg.src = '';
-  }
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
+</div>
 
-  function prev() { openAt((index - 1 + shots.length) % shots.length); }
-  function next() { openAt((index + 1) % shots.length); }
-
-  shots.forEach((img, i) => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => openAt(i));
-  });
-
-  lb.addEventListener('click', (e) => {
-    if (e.target.matches('[data-close]')) close();
-  });
-
-  lb.querySelector('[data-prev]').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
-  lb.querySelector('[data-next]').addEventListener('click', (e) => { e.stopPropagation(); next(); });
-
-  document.addEventListener('keydown', (e) => {
-    if (!lb.classList.contains('is-open')) return;
-    if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') prev();
-    if (e.key === 'ArrowRight') next();
-  });
-})();
-</script>
-
+  <script src="script.js"></script>
 
 <body>
   <!-- fond décoratif -->
@@ -213,6 +175,7 @@
   </main>
 </body>
 </html>
+
 
 
 
