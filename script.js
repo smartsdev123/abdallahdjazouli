@@ -1,64 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const shots = Array.from(document.querySelectorAll('.shot img'));
+const shots = [...document.querySelectorAll('.gallery img')];
 
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('.lightbox__img');
-  const lightboxCaption = lightbox.querySelector('.lightbox__caption');
-  const btnClose = lightbox.querySelector('.lightbox__close');
-  const btnPrev = lightbox.querySelector('.lightbox__nav--prev');
-  const btnNext = lightbox.querySelector('.lightbox__nav--next');
-  const backdrop = lightbox.querySelector('.lightbox__backdrop');
+const lightbox = document.getElementById('lightbox');
+const lbImg = lightbox.querySelector('.lightbox__img');
+const lbCaption = lightbox.querySelector('.lightbox__caption');
+const btnClose = lightbox.querySelector('.lightbox__close');
+const btnPrev = lightbox.querySelector('.lightbox__nav--prev');
+const btnNext = lightbox.querySelector('.lightbox__nav--next');
+const backdrop = lightbox.querySelector('.lightbox__backdrop');
 
-  let currentIndex = 0;
+let index = 0;
 
-  function openLightbox(index) {
-    currentIndex = index;
+function openLightbox(i) {
+  index = i;
+  const img = shots[index];
+  lbImg.src = img.src;
+  lbImg.alt = img.alt || '';
+  const caption = img.closest('figure')?.querySelector('.cap__meta');
+  lbCaption.textContent = caption ? caption.textContent : '';
+  lightbox.classList.add('is-open');
+  document.body.classList.add('no-scroll');
+}
 
-    lightboxImg.src = shots[index].src;
-    lightboxImg.alt = shots[index].alt || '';
+function closeLightbox() {
+  lightbox.classList.remove('is-open');
+  document.body.classList.remove('no-scroll');
+  lbImg.src = '';
+}
 
-    const fig = shots[index].closest('figure');
-    const cap = fig ? fig.querySelector('figcaption') : null;
-    lightboxCaption.textContent = cap ? cap.innerText : '';
+function showNext() {
+  index = (index + 1) % shots.length;
+  openLightbox(index);
+}
 
-    lightbox.classList.add('is-open');
-    document.body.classList.add('no-scroll');
-  }
+function showPrev() {
+  index = (index - 1 + shots.length) % shots.length;
+  openLightbox(index);
+}
 
-  function closeLightbox() {
-    lightbox.classList.remove('is-open');
-    document.body.classList.remove('no-scroll');
-    lightboxImg.src = '';
-  }
+shots.forEach((img, i) => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => openLightbox(i));
+});
 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + shots.length) % shots.length;
-    openLightbox(currentIndex);
-  }
+btnClose.addEventListener('click', closeLightbox);
+backdrop.addEventListener('click', closeLightbox);
+btnNext.addEventListener('click', showNext);
+btnPrev.addEventListener('click', showPrev);
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % shots.length;
-    openLightbox(currentIndex);
-  }
-
-  shots.forEach((img, index) => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', (e) => {
-      e.preventDefault();
-      openLightbox(index);
-    });
-  });
-
-  btnClose.addEventListener('click', closeLightbox);
-  backdrop.addEventListener('click', closeLightbox);
-  btnPrev.addEventListener('click', prevImage);
-  btnNext.addEventListener('click', nextImage);
-
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('is-open')) return;
-
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
-  });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('is-open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrev();
 });
