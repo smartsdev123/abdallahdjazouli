@@ -9,37 +9,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-  <!-- Lightbox (preview plein écran) -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox__backdrop" data-close></div>
-
-  <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Aperçu photo">
-    <button class="lightbox__close" type="button" aria-label="Fermer" data-close>✕</button>
-
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Précédent" data-prev>‹</button>
-    <img class="lightbox__img" id="lightboxImg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Suivant" data-next>›</button>
-
-    <div class="lightbox__caption" id="lightboxCaption"></div>
-  </div>
-</div>
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox__backdrop" data-close></div>
-
-  <div class="lightbox__panel" role="dialog" aria-modal="true">
-    <button class="lightbox__close" type="button" data-close>✕</button>
-
-    <button class="lightbox__nav lightbox__nav--prev" type="button" data-prev>‹</button>
-    <img class="lightbox__img" id="lightboxImg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" type="button" data-next>›</button>
-
-    <div class="lightbox__caption" id="lightboxCaption"></div>
-  </div>
-</div>
-
-  <script src="script.js"></script>
-
 <body>
   <!-- fond décoratif -->
   <div class="bg" aria-hidden="true"></div>
@@ -76,6 +45,7 @@
       <h2 class="card__title">moments</h2>
       <p class="card__text">
         Photos compromettantes a l'insu d'Abdallah Djazouli.
+      </p>
     </section>
 
     <!-- galerie -->
@@ -130,18 +100,17 @@
       </figure>
 
       <figure class="shot shot--big">
-  <video
-    src="VID_20251218_095706.mp4"
-    controls
-    playsinline
-    preload="metadata"
-  ></video>
-  <figcaption>
-    <span class="cap__title">Souvenir vidéo</span>
-    <span class="cap__meta">Abdallah en train de jouer a Minecraft durant le court de SI</span>
-  </figcaption>
-</figure>
-
+        <video
+          src="VID_20251218_095706.mp4"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
+        <figcaption>
+          <span class="cap__title">Souvenir vidéo</span>
+          <span class="cap__meta">Abdallah en train de jouer a Minecraft durant le court de SI</span>
+        </figcaption>
+      </figure>
 
       <figure class="shot">
         <img src="Capture d'écran 2026-02-01 011229.png" alt="Souvenir 8" loading="lazy" />
@@ -151,32 +120,47 @@
         </figcaption>
       </figure>
     </section>
-    
-      <figure class="shot">
-        <img src="Snapchat-573563581.jpg" alt="Souvenir 4" loading="lazy" />
-        <figcaption>
-          <span class="cap__title">Photo 9</span>
-          <span class="cap__meta">Photo d'Abdallah en train de faire une grimace traumatisante dans sa vitre de PC</span>
-        </figcaption>
-      </figure>
-    
+
     <figure class="shot">
-        <img src="13444.jpg" alt="Souvenir 4" loading="lazy" />
-        <figcaption>
-          <span class="cap__title">Photo 10</span>
-          <span class="cap__meta">Photo d'Abdallah au musee de l'illusion.</span>
-        </figcaption>
-      </figure>
+      <img src="Snapchat-573563581.jpg" alt="Souvenir 4" loading="lazy" />
+      <figcaption>
+        <span class="cap__title">Photo 9</span>
+        <span class="cap__meta">Photo d'Abdallah en train de faire une grimace traumatisante dans sa vitre de PC</span>
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="13444.jpg" alt="Souvenir 4" loading="lazy" />
+      <figcaption>
+        <span class="cap__title">Photo 10</span>
+        <span class="cap__meta">Photo d'Abdallah au musee de l'illusion.</span>
+      </figcaption>
+    </figure>
 
     <!-- footer -->
     <footer class="footer">
       <p>fait avec ❤️ — <span class="muted">abdallahdjazouli.com</span></p>
     </footer>
   </main>
+
+  <!-- Lightbox (déplacée ICI, dans le body) -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__backdrop"></div>
+
+    <div class="lightbox__panel">
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Précédent">‹</button>
+
+      <img class="lightbox__img" src="" alt="">
+
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Suivant">›</button>
+
+      <button class="lightbox__close" aria-label="Fermer">✕</button>
+
+      <div class="lightbox__caption"></div>
+    </div>
+  </div>
+
+  <!-- Script (déplacé ICI, fin de body) -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
